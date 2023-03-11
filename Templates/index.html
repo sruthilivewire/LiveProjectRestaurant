@@ -1,0 +1,124 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ChopSticks</title>
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+    <meta name="description" content="Order food online from restaurants and get it delivered. Serving in Bangalore, Hyderabad, Delhi, Gurgaon, Nagpur, Jaipur, Coimbatore, Chandigarh, Ahemdabad, Visakhapatnam, Lucknow, Noida, Mumbai, Pune, Indore, Kochi, Kolkata and Chennai. Order Pizzas, Burgers, Biryanis, Desserts or order from Subway, Pizza Hut, Dominos, KFC, McDonalds.">
+    <meta name="keywords" content="restaurants, order food, order online, order food online, food, delivery, food delivery, home delivery">
+    
+</head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
+
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        padding: 0;
+        width: 100%;
+        height: auto;
+    }
+    nav{
+        width: 100%;
+        height: 740px;
+        background: url("{% static 'images/coverpic.png' %}");
+        background-position: bottom;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .navlinks {
+        margin: 0 auto;
+        width: 80%;
+        height: 80px;
+        margin-top: 15px;
+        position: absolute;
+        margin-left: 10em;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    .navlinks a{
+        text-decoration: none;
+        padding: 0 40px 0 40px;
+        font-size: 30px;
+        letter-spacing: 5px;
+        color: rgb(237 237 237);
+        font-family: 'Dancing Script', cursive;
+    }
+
+    .navlinks a:hover{
+        color: rgb(240, 162, 4);
+        font-size: 35px;
+    }
+
+    .navlinks .last{
+        color:white;
+    }
+
+    .navbutton{
+        width: 300px;
+        height: 85px;
+        background-color: rgb(232, 103, 5);
+        position: absolute;
+        margin-top: 550px;
+        margin-left: 285px;
+        border-bottom-right-radius: 50px;
+        border-top-left-radius: 50px;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .navbutton:hover{
+        background-color: white;
+        
+    }
+
+    .navbutton h3{
+        margin-top: 20px;
+        font-size: 30px;
+        letter-spacing: 5px;
+        color: rgb(237 237 237);
+        font-family: 'Dancing Script', cursive;
+    }
+
+    .navbutton h3:hover{
+        color: darkorange;
+        font-size: 33px;
+    }
+
+    .navlinks .active{
+        color: darkorange;
+    }
+</style>
+<body>
+
+<nav>
+    <div class="navlinks">
+        <a class="active" href="{% url 'home' %}">Home</a>
+        <a href="#">Our Tream</a>
+        <a href="{% url 'menu' %}">Our Menu</a>
+        <a href="#">Our Services</a>
+
+    </div>
+
+    <a href="{% url 'menu' %}">
+        <div class="navbutton">
+            <h3>Taste Now!</h3>
+        </div>
+    </a>
+
+</nav>
+
+
+
+
+</body>
+</html>

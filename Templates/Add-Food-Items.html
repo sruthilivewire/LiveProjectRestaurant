@@ -1,0 +1,94 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+
+        .addfood-form{
+            width: 80%;
+            height: 550px;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .section1{
+            height: 500px;
+            width: 40%;
+            background-image: url('{% static "images\cover1.jpg" %}');
+            background-position: bottom;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .section2{
+            height: 500px;
+            width: 60%;
+            background-color: rgb(251, 224, 205);
+            
+        }
+
+        form{
+            margin: 20px auto;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            width: 50%;
+            height: 400px;
+
+        }
+
+        form input{
+            padding: 2em;
+            height: 20px;
+            width: 260px;
+            margin-top: 1em;
+            border-radius: 20px;
+        }
+
+        form button{
+            width: 160px;
+            height: 40px;
+            background-color: black;
+            color : white;
+            border-radius: 20px;
+            margin-top: 1em;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="addfood-form">
+        <div class="section1">
+
+        </div>
+        <div class="section2">
+            <form action="{% url 'add-main-course' %}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <center>
+                    <h3>Add Details</h3>
+                </center>
+                <input type="text" name="item_code" placeholder="Item-code" required>
+                <br>
+                <input type="text" name="item_name" placeholder="Name" required>
+                <br>
+                <input type="text" name="price"  placeholder="Price" required>
+                <br>
+                <input type="number" name="quantity" placeholder="Quantity" min="0" required>
+                <br>
+                <input type="file" name="image" required>
+                <br>
+                <button type="submit">Add Item</button>
+                <br>
+            </form>
+        </div>
+    </div>
+
+    <br><br><br>
+</body>
+</html>
+
+{% endblock %}
